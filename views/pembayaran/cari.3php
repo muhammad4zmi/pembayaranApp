@@ -1,0 +1,62 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Form Add Mahasiswa
+
+    </h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Form Add Data Mahasiswa</h6>
+        </div>
+        <div class="card-body">
+            <form class="user" method="POST" action="?page=addMahasiswa">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Cari Mahasiswa</label>
+                                <select name="" id="cari" class="form-control select2bs4" width="100%">
+                                    <?php
+                                    $queryCari = mysqli_query($connect, "SELECT * FROM mahasiswa WHERE nim ORDER BY nim ASC");
+                                    foreach ($queryCari as $m) :
+                                    ?>
+                                        <option value="">Cari Mahasiswa Berdasarkan NIM atau NAMA</option>
+                                        <option value="<?= $m['nim']; ?>"><?= $m['nim'] . ' - ' . $m['nama']; ?></option>
+
+                                    <?php endforeach; ?>
+
+                                </select>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <!-- <div class="text-left">
+                        <a href="?page=mahasiswa" class="btn btn-sm btn-danger" name="kembali">
+                            <i class="fas fa-arrow-left"></i>
+                            Kembali</a>
+                        <button type="submit" name="btn_simpan" class="btn btn-sm btn-success">
+                            <i class="fas fa-save"></i>
+                            Simpan </button>
+
+                    </div> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

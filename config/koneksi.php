@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $db = "db_pembayaran";
 
-$connect = mysqli_connect($host,$user, $password,$db);
+$connect = mysqli_connect($host, $user, $password, $db);

@@ -1,0 +1,101 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Form Add Mahasiswa
+
+    </h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Form Pembayaran Mahasiswa</h6>
+        </div>
+        <div class="card-body">
+            <form action="index.php?modul=notifikasi" method="post">
+                <div class="form-group">
+                    <div class="col-lg-12" id="pesan">
+                    </div>
+                    <?php
+                    if (isset($_SESSION['alert'])) {
+                        echo $_SESSION['alert'];
+                    }
+                    unset($_SESSION['alert']);
+                    ?>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="inputNim">Nim Mahasiswa</label>
+                            <div class="input-group">
+                                <input type="text" class="tultif form-control " id="inputNim" value="" name="nim" placeholder="Nim Anda" title="" data-toggle="tooltip" data-original-title="Gunakan Nim Untuk Mencari Mahasiswa" required />
+                                <div class="input-group-btn">
+                                    <button type="button" id="cek_nim" class="btn btn btn-primary"><i class="fa fa-search-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="inputNama">Nama Mahasiswa</label>
+                            <input type="text" id="inputNama" name="nama_mhs" class="form-control" placeholder="Masukkan Nama" readonly="" required="" />
+
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="inputAngkatan">Angkatan</label>
+                            <input type="text" id="inputAngkatan" name="angkatan" class="form-control" placeholder="Masukkan Angkatan" readonly="" required />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="inputProdi">Program Studi</label>
+                            <input type="text" id="inputProdi" name="prodi" class="form-control" placeholder="Masukkan Prodi" readonly="" required />
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label>Jenis Pembayaran</label>
+                            <select name="jenis" class="form-control" id="mapel">
+                                <option>
+                                    <center>Pilih Jenis Pembayaran</center>
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <div class="modal-footer clearfix">
+
+                    <button type="reset" class="btn btn-danger btn-flat" data-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+
+                    <button type="submit" data-loading-text="Loading..." name="kirim" class="btn btn-primary btn-flat pull-left"><i class="fa fa-save"></i> Simpan </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
